@@ -23,9 +23,7 @@ function getUsers() {
     if ($resultat) {
 
         // Affichage des résultats
-        while ($ligne = $resultat->fetch_assoc()) {
-            return "ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>";
-        }
+        return $resultat;
 
         // Libérer le résultat
         $resultat->free();

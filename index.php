@@ -73,8 +73,10 @@
     <div class="contenu">
         <!-- Votre contenu HTML va ici -->
         <?php
-        $user = getUsers();
-        echo $users;
+        $resultat = getUsers();
+        while ($ligne = $resultat->fetch_assoc()) {
+            echo "ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>";
+        }
         ?>
     </div>
     <div class="maintenance-container">
