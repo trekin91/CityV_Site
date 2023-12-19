@@ -69,8 +69,7 @@
     <div class="contenu">
         <!-- Votre contenu HTML va ici -->
         <?php
-        // Utilisez la connexion pour exécuter des requêtes SQL ou d'autres opérations avec la base de données
-        // ...
+            die("Échec de la connexion : " . $connexion->connect_error);
         ?>
     </div>
     <div class="maintenance-container">
