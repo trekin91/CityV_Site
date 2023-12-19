@@ -73,29 +73,8 @@
     <div class="contenu">
         <!-- Votre contenu HTML va ici -->
         <?php
-        // Requête SQL pour récupérer toutes les colonnes de la table 'test'
-        $sql = "SELECT * FROM test";
-
-        // Exécution de la requête
-        $resultat = $connexion->query($sql);
-
-        // Vérifier si la requête a réussi
-        if ($resultat) {
-
-            // Affichage des résultats
-            while ($ligne = $resultat->fetch_assoc()) {
-                echo "ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>";
-            }
-
-            // Libérer le résultat
-            $resultat->free();
-        } else {
-            // Affichage d'une erreur si la requête a échoué
-            echo "Erreur de requête : " . $connexion->error;
-        }
-
-        // Fermer la connexion
-        $connexion->close();
+        $user = getUsers();
+        echo $users;
         ?>
     </div>
     <div class="maintenance-container">

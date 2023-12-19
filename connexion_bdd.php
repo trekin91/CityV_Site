@@ -11,4 +11,30 @@ $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $baseDeDonnees);
 if ($connexion->connect_error) {
     die("Échec de la connexion : " . $connexion->connect_error);
 }
+
+function getUsers() {
+    // Requête SQL pour récupérer toutes les colonnes de la table 'test'
+    $sql = "SELECT * FROM test";
+
+    // Exécution de la requête
+    $resultat = $connexion->query($sql);
+
+    // Vérifier si la requête a réussi
+    if ($resultat) {
+
+        // Affichage des résultats
+        while ($ligne = $resultat->fetch_assoc()) {
+            return "ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>";
+        }
+
+        // Libérer le résultat
+        $resultat->free();
+    } else {
+        // Affichage d'une erreur si la requête a échoué
+        return "Erreur de requête : " . $connexion->error;
+    }
+
+    // Fermer la connexion
+    $connexion->close();
+}
 ?>
