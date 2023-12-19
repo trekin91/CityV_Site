@@ -33,17 +33,7 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
-$routes->get('/login', 'Auth::index', ['filter' => 'noauth']);
-$routes->post('/loginCheck', 'Auth::loginCheck');
-
-// Filter on route group
-$routes->group('', ['filter'=>'auth'], function ($routes){
-    $routes->get('/logout', 'Auth::logout');
-    $routes->get('/', 'Home::index');
-    $routes->get('/(:any)', 'Home::root/$1');
-});
+ $routes->get('/', 'Home::index');
 
 /*
  * --------------------------------------------------------------------
