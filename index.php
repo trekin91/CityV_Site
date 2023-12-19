@@ -69,7 +69,7 @@
     <div class="contenu">
         <!-- Votre contenu HTML va ici -->
         <?php
-            die("Échec de la connexion : " . $connexion->connect_error);
+            die("Échec de la connexion : " . $connexion);
         ?>
     </div>
     <div class="maintenance-container">
