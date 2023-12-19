@@ -81,9 +81,10 @@
 
         // Vérifier si la requête a réussi
         if ($resultat) {
+
             // Affichage des résultats
             while ($ligne = $resultat->fetch_assoc()) {
-                die("ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>");
+                echo "ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - Prenom: " . $ligne['prenom'] . "<br>";
             }
 
             // Libérer le résultat
