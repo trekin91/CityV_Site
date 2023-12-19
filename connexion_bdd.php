@@ -12,7 +12,7 @@ if ($connexion->connect_error) {
     die("Échec de la connexion : " . $connexion->connect_error);
 }
 
-function getUsers() {
+function getUsers($connexion) {
     // Requête SQL pour récupérer toutes les colonnes de la table 'test'
     $sql = "SELECT * FROM test";
 
