@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,8 @@
             padding: 20px;
             background-color: #37003c;
             border: 4px solid #ffd600;
-            border-radius: 15px; /* Ajout de la propriété border-radius */
+            border-radius: 15px;
+            /* Ajout de la propriété border-radius */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -43,7 +45,8 @@
             max-width: 100%;
             height: auto;
             border: 2px solid #ffd600;
-            border-radius: 15px; /* Ajout de la propriété border-radius */
+            border-radius: 15px;
+            /* Ajout de la propriété border-radius */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
         }
@@ -53,23 +56,45 @@
             font-size: 14px;
             color: #b3b3b3;
         }
+
         a {
             color: #b3b3b3;
             text-decoration: none;
             font-weight: bold;
             text-decoration: underline;
         }
-
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <?php include('connexion_bdd.php'); ?>
 
     <div class="contenu">
         <!-- Votre contenu HTML va ici -->
         <?php
+        // Requête SQL pour récupérer toutes les colonnes de la table 'test'
+        $sql = "SELECT * FROM test";
 
+        // Exécution de la requête
+        $resultat = $connexion->query($sql);
+
+        // Vérifier si la requête a réussi
+        if ($resultat) {
+            // Affichage des résultats
+            while ($ligne = $resultat->fetch_assoc()) {
+                die("ID: " . $ligne['id'] . " - Nom: " . $ligne['nom'] . " - AutreColonne: " . $ligne['autre_colonne'] . "<br>");
+            }
+
+            // Libérer le résultat
+            $resultat->free();
+        } else {
+            // Affichage d'une erreur si la requête a échoué
+            echo "Erreur de requête : " . $connexion->error;
+        }
+
+        // Fermer la connexion
+        $connexion->close();
         ?>
     </div>
     <div class="maintenance-container">
@@ -81,4 +106,5 @@
         <footer>&copy; 2023 City V. Tous droits réservés.</footer>
     </div>
 </body>
+
 </html>
