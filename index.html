@@ -1,23 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
-    <!-- Vous pouvez ajouter des liens vers des fichiers CSS ou d'autres ressources ici -->
+    <title>En maintenance</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .maintenance-container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e44d26;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur notre site</h1>
-    </header>
-
-    <section>
-        <p>C'est la page d'accueil de notre site.</p>
-        <!-- Vous pouvez ajouter du contenu ici -->
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Nom de votre entreprise</p>
-    </footer>
+    <div class="maintenance-container">
+        <img src="https://via.placeholder.com/300" alt="Logo" />
+        <h1>Site en maintenance</h1>
+        <p>Nous effectuons actuellement des travaux de maintenance pour améliorer votre expérience. Merci de votre compréhension.</p>
+        <footer>&copy; 2023 CityV. Tous droits réservés.</footer>
+    </div>
 </body>
 </html>
