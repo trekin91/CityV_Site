@@ -64,6 +64,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php include('connexion_bdd.php'); ?>
+
+    <div class="contenu">
+        <!-- Votre contenu HTML va ici -->
+        <?php
+        // Utilisez la connexion pour exécuter des requêtes SQL ou d'autres opérations avec la base de données
+        // ...
+        ?>
+    </div>
     <div class="maintenance-container">
         <img src="CityV.png" alt="Logo" />
         <h1>En maintenance</h1>
